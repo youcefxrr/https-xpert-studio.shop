@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشروط والأحكام | Xpert Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>@font-face { font-family: 'Bukra'; src: url('../fonts/bukra-bold.ttf') format('truetype'); font-weight: bold; } @font-face { font-family: 'Arial Custom'; src: url('../fonts/arial.ttf') format('truetype'); }</style>
+    <style>
+        :root {
+            --primary: #f07a04;
+            --primary-light: #f38605;
+            --primary-dark: #ee6603;
+            --bg: #171717;
+            --bg-light: #1f1f1f;
+            --bg-lighter: #2a2a2a;
+            --text: #ffffff;
+            --text-muted: #888888;
+            --border: rgba(240, 122, 4, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Bukra', 'Arial Custom', Arial, sans-serif;
+            background-color: var(--bg);
+            background-image: url('../images/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(23, 23, 23, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo img { width: 50px; height: 50px; object-fit: contain; }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: var(--bg) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span { width: 25px; height: 2px; background: var(--primary); }
+
+        .page-header {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-header h1 .highlight {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-header p { color: var(--text-muted); font-size: 1.2rem; }
+
+        section { padding: 2rem 2rem 4rem; }
+
+        .rules-container { max-width: 900px; margin: 0 auto; }
+
+        .warning-box {
+            background: rgba(240, 122, 4, 0.15);
+            border: 1px solid var(--primary);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .warning-box p {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .rules-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .rule-card {
+            background: rgba(31, 31, 31, 0.9);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .rule-card:hover {
+            border-color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .rule-number {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bg);
+        }
+
+        .rule-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .rule-content p { color: var(--text-muted); }
+
+        footer {
+            background: rgba(31, 31, 31, 0.9);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img { width: 40px; height: 40px; }
+        .footer-text { color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+            .nav-links.active { display: flex; }
+            .mobile-toggle { display: flex; }
+            .rule-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../" class="logo">
+                <img src="../images/logo.png" alt="Xpert Studio">
+                <span class="logo-text">XPERT STUDIO</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../">الرئيسية</a></li>
+                <li><a href="stream">باكج ستريم</a></li>
+                <li><a href="discord">باكج ديسكورد</a></li>
+                <li><a href="alerts">الأليرتات</a></li>
+                <li><a href="rules">الشروط</a></li>
+                <li><a href="faq">الأسئلة الشائعة</a></li>
+                <li><a href="contact" class="nav-cta">تواصل معنا</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>الشروط <span class="highlight">والأحكام</span></h1>
+        <p>يرجى قراءة الشروط بعناية قبل الطلب</p>
+    </div>
+
+    <section>
+        <div class="rules-container">
+            <div class="warning-box">
+                <p>يجب عليك قراءة القوانين قبل الطلب • في حال عدم اطلاعك عليها لا نتحمل أي مسؤولية</p>
+            </div>
+
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-number">1</div>
+                    <div class="rule-content">
+                        <h3>الدفع مقدماً</h3>
+                        <p>يتم الدفع كاملاً قبل البدء في العمل لضمان جدية الطلب وتأكيد الحجز.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">2</div>
+                    <div class="rule-content">
+                        <h3>لا استرداد</h3>
+                        <p>لا يمكن استرداد المبلغ بعد بدء العمل على التصميم أو بعد تسليم المنتج النهائي.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">3</div>
+                    <div class="rule-content">
+                        <h3>التعديلات</h3>
+                        <p>يحق لك طلب تعديلات معقولة على التصميم خلال فترة التنفيذ حتى تصل للرضا التام.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">4</div>
+                    <div class="rule-content">
+                        <h3>مدة التسليم</h3>
+                        <p>يتم تسليم الطلبات خلال المدة المتفق عليها حسب حجم العمل ونوع الباكج المختار.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">5</div>
+                    <div class="rule-content">
+                        <h3>حقوق الملكية</h3>
+                        <p>جميع التصاميم تصبح ملكاً لك بعد التسليم والدفع الكامل، ويحق لك استخدامها كيفما تشاء.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">6</div>
+                    <div class="rule-content">
+                        <h3>الاحترام المتبادل</h3>
+                        <p>نحرص على التعامل باحترام متبادل لضمان تجربة مميزة لكلا الطرفين.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="../images/logo.png" alt="Xpert Studio">
+            <span style="font-weight: 700; color: var(--primary);">XPERT STUDIO</span>
+        </div>
+        <p class="footer-text">© 2026 Xpert Studio. جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باكج ديسكورد | Xpert Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>@font-face { font-family: 'Bukra'; src: url('../fonts/bukra-bold.ttf') format('truetype'); font-weight: bold; } @font-face { font-family: 'Arial Custom'; src: url('../fonts/arial.ttf') format('truetype'); }</style>
+    <style>
+        :root {
+            --primary: #f07a04;
+            --primary-light: #f38605;
+            --primary-dark: #ee6603;
+            --bg: #171717;
+            --bg-light: #1f1f1f;
+            --bg-lighter: #2a2a2a;
+            --text: #ffffff;
+            --text-muted: #888888;
+            --border: rgba(240, 122, 4, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Bukra', 'Arial Custom', Arial, sans-serif;
+            background-color: var(--bg);
+            background-image: url('../images/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(23, 23, 23, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo img { width: 50px; height: 50px; object-fit: contain; }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: var(--bg) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span { width: 25px; height: 2px; background: var(--primary); }
+
+        .page-header {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-header h1 .highlight {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-header p { color: var(--text-muted); font-size: 1.2rem; }
+
+        section { padding: 2rem 2rem 4rem; }
+
+        .products-container { max-width: 1400px; margin: 0 auto; }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: rgba(31, 31, 31, 0.9);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-card.featured { border-color: var(--primary); }
+        .product-image { width: 100%; height: auto; display: block; }
+        .product-content { padding: 1.5rem; }
+
+        .card-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-lighter);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card-btn:hover {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: var(--bg);
+            border-color: transparent;
+        }
+
+        footer {
+            background: rgba(31, 31, 31, 0.9);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img { width: 40px; height: 40px; }
+        .footer-text { color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+            .nav-links.active { display: flex; }
+            .mobile-toggle { display: flex; }
+            .products-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../" class="logo">
+                <img src="../images/logo.png" alt="Xpert Studio">
+                <span class="logo-text">XPERT STUDIO</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../">الرئيسية</a></li>
+                <li><a href="stream">باكج ستريم</a></li>
+                <li><a href="discord">باكج ديسكورد</a></li>
+                <li><a href="alerts">الأليرتات</a></li>
+                <li><a href="rules">الشروط</a></li>
+                <li><a href="faq">الأسئلة الشائعة</a></li>
+                <li><a href="contact" class="nav-cta">تواصل معنا</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>باكج <span class="highlight">ديسكورد</span></h1>
+        <p>تصاميم متكاملة لسيرفر ديسكورد مميز</p>
+    </div>
+
+    <section>
+        <div class="products-container">
+            <div class="products-grid">
+                <div class="product-card featured">
+                    <img src="../images/discord-premium.png" alt="الفئة الفائقة" class="product-image">
+                    <div class="product-content">
+                        <a href="contact" class="card-btn">اطلب الآن</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="../images/discord-medium.png" alt="الفئة المتوسطة" class="product-image">
+                    <div class="product-content">
+                        <a href="contact" class="card-btn">اطلب الآن</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="../images/discord-basic.png" alt="الفئة المنخفضة" class="product-image">
+                    <div class="product-content">
+                        <a href="contact" class="card-btn">اطلب الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="../images/logo.png" alt="Xpert Studio">
+            <span style="font-weight: 700; color: var(--primary);">XPERT STUDIO</span>
+        </div>
+        <p class="footer-text">© 2026 Xpert Studio. جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>
