@@ -14,7 +14,42 @@
 
 
 
+/* الحاوية الكبيرة للأيقونات */
+.social-links {
+    display: flex;
+    gap: 10px; /* المسافة بين المربعات */
+}
 
+/* تنسيق المربع (الرابط) */
+.social-link {
+    display: flex;          /* لتفعيل التوسيط */
+    justify-content: center; /* توسيط أفقي */
+    align-items: center;     /* توسيط عمودي */
+    width: 40px;            /* عرض المربع */
+    height: 40px;           /* ارتفاع المربع */
+    background-color: transparent; /* خلفية شفافة في الحالة العادية */
+    border-radius: 12px;    /* زوايا منحنية كما في الصورة */
+    text-decoration: none;
+    transition: all 0.3s ease; /* سلاسة في تحول الألوان */
+    border: 1px solid #333; /* إطار بسيط ليظهر المربع (اختياري) */
+}
+
+/* تنسيق الأيقونة داخل المربع */
+.social-link i {
+    color: #8a8a8a;         /* اللون الرمادي للأيقونة (مثل الصورة) */
+    font-size: 18px;        /* حجم الأيقونة */
+    transition: all 0.3s ease;
+}
+
+/* تأثير وضع الماوس (Hover) */
+.social-link:hover {
+    background-color: #ff8400; /* البرتقالي الخاص بـ Xpert Studio */
+    border-color: #ff8400;
+}
+
+.social-link:hover i {
+    color: #ffffff;         /* لون الأيقونة يصبح أبيض أو نفس لون الخلفية الداكنة عند التمرير */
+}
 
 
 
@@ -1260,23 +1295,22 @@
                     <img src="images/logo.png" alt="Xpert Studio">
                     <h4>XPERT STUDIO</h4>
                     <div class="social-links">
-                        <a href="https://discord.gg/52jCrPsSdg" target="_blank" class="social-link" title="Discord">
-                            <span class="material-icons"><i class="fa-brands fa-discord"></i></span>
-                        </a>
-                        <a href="https://www.youtube.com/@xpert.alerts" target="_blank" class="social-link" title="YouTube">
-                            <span class="material-icons"><i class="fa-brands fa-youtube"></i></span>
-                        </a>
-                        <a href="https://www.tiktok.com/@youcef_xr" target="_blank" class="social-link" title="TikTok">
-                            <span class="material-icons"><i class="fa-brands fa-tiktok"></i></span>
-                        </a>
-                        <a href="https://x.com/Xpert_gf" target="_blank" class="social-link" title="X">
-                            <span class="material-icons"><i class="fa-brands fa-x-twitter"></i></span>
-                        </a>
-                        <a href="https://www.instagram.com/xpert.gf/" target="_blank" class="social-link" title="Instagram">
-                            <span class="material-icons"><i class="fa-brands fa-instagram"></i></span>
-                        </a>
-                    </div>
-                </div>
+    <a href="https://discord.gg/52jCrPsSdg" target="_blank" class="social-link" title="Discord">
+        <i class="fa-brands fa-discord"></i>
+    </a>
+    <a href="https://www.youtube.com/@xpert.alerts" target="_blank" class="social-link" title="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a href="https://www.tiktok.com/@youcef_xr" target="_blank" class="social-link" title="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+    <a href="https://x.com/Xpert_gf" target="_blank" class="social-link" title="X">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/xpert.gf/" target="_blank" class="social-link" title="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+</div>
                 
                 <div class="footer-col">
                     <h4>روابط مهمة</h4>
