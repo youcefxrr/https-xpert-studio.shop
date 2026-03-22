@@ -11,48 +11,49 @@
     <title>Xpert Studio | بوابة الإبداع</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-
-
-
 /* الحاوية الكبيرة للأيقونات */
 .social-links {
     display: flex;
-    gap: 10px; /* المسافة بين المربعات */
+    gap: 10px;
+    align-items: center; /* يضمن محاذاة كل المربعات على خط واحد */
 }
 
 /* تنسيق المربع (الرابط) */
 .social-link {
-    display: flex;          /* لتفعيل التوسيط */
-    justify-content: center; /* توسيط أفقي */
-    align-items: center;     /* توسيط عمودي */
-    width: 40px;            /* عرض المربع */
-    height: 40px;           /* ارتفاع المربع */
-    background-color: transparent; /* خلفية شفافة في الحالة العادية */
-    border-radius: 12px;    /* زوايا منحنية كما في الصورة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 12px;
     text-decoration: none;
-    transition: all 0.3s ease; /* سلاسة في تحول الألوان */
-    border: 1px solid #333; /* إطار بسيط ليظهر المربع (اختياري) */
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    box-sizing: border-box; /* يمنع الإطار من زيادة حجم المربع */
+    overflow: hidden; /* يمنع أي تداخل خارجي */
 }
 
-/* تنسيق الأيقونة داخل المربع */
+/* تنسيق الأيقونة المصلح */
 .social-link i {
-    color: #8a8a8a;         /* اللون الرمادي للأيقونة (مثل الصورة) */
-    font-size: 18px;        /* حجم الأيقونة */
+    color: #8a8a8a;
+    font-size: 18px;
     transition: all 0.3s ease;
+    display: flex; /* يضمن أن الأيقونة نفسها تتصرف كعنصر فليكس */
+    line-height: 0; /* يحذف أي ارتفاع سطر افتراضي يسبب التداخل */
+    margin: 0;
+    padding: 0;
 }
 
 /* تأثير وضع الماوس (Hover) */
 .social-link:hover {
-    background-color: #ff8400; /* البرتقالي الخاص بـ Xpert Studio */
+    background-color: #ff8400;
     border-color: #ff8400;
 }
 
 .social-link:hover i {
-    color: #ffffff;         /* لون الأيقونة يصبح أبيض أو نفس لون الخلفية الداكنة عند التمرير */
+    color: #ffffff;
 }
-
-
-
 
 
 
@@ -80,46 +81,6 @@
     color: white;
     border: none;
 }
-
-
-
-
-
-
-
-
-        
-
-
-
-        
-
-/* تنسيق المربع المحيط بالأيقونة */
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;            /* عرض المربع */
-    height: 45px;           /* طول المربع */
-    background: #2a2a2a;    /* لون خلفية المربع (رمادي غامق) */
-    border-radius: 12px;    /* جعل الزوايا دائرية */
-    margin: 5px;            /* مسافة بين الأيقونات */
-    text-decoration: none;  /* حذف الخط تحت الرابط */
-    transition: 0.3s;       /* سرعة الحركة عند تمرير الماوس */
-}
-
-/* تنسيق الشعار نفسه داخل المربع */
-.social-link i {
-    color: #ffffff;         /* لون الشعار (أبيض) */
-    font-size: 20px;        /* حجم الشعار */
-}
-
-/* تأثير رهيب عند تمرير الماوس */
-.social-link:hover {
-    background: #ff8c00;    /* يتغير لون المربع للبرتقالي (مثل لون شعارك) */
-    transform: translateY(-5px); /* يرتفع المربع قليلاً للأعلى */
-}
-
 
 
 
