@@ -60,9 +60,9 @@
 
 
 .payment-icon {
-    width: 45px;   /* عرض ثابت لكل بطاقة */
-    height: 28px;  /* طول ثابت */
-    display: flex;
+    width: 90px;   /* عرض ثابت لكل بطاقة */
+    height: 56px;  /* طول ثابت */
+    display: flex;z
     align-items: center;
     justify-content: center;
     background-color: #1a1a1a; /* لون خلفية الأيقونات */
@@ -74,7 +74,7 @@
 
 /* تنسيق خاص بكلمة mada لتظهر بشكل صحيح */
 .payment-icon.mada {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     background-color: #006651; /* أخضر مدى الشهير */
     color: white;
@@ -1031,7 +1031,9 @@
         .payment-icon.mastercard { background: #eb001b; color: #fff; }
         .payment-icon.applepay { background: #000; color: #fff; }
         .payment-icon.mada { background: #004d40; color: #fff; }
+        .payment-icon.paypal {  background: #003087; color: #fff;
 
+                              
         /* Responsive */
         @media (max-width: 968px) {
             .hero-container { flex-direction: column-reverse; text-align: center; }
@@ -1337,13 +1339,39 @@
             <div class="footer-bottom">
                 <p class="footer-text">صنع بإتقان © 2026 Xpert Studio</p>
                 
-              <div class="payment-methods">
-    <span class="payment-icon mada">mada</span>
-    <span class="payment-icon mastercard"><i class="fa-brands fa-cc-mastercard"></i></span>
-    <span class="payment-icon visa"><i class="fa-brands fa-cc-visa"></i></span>
-    <span class="payment-icon applepay"><i class="fa-brands fa-apple-pay"></i></span>
+<div class="footer-bottom">
+    <div class="footer-content">
+        <div class="copyright-text">
+            Xpert Studio 2026 © صنع بإتقان
+        </div>
+
+        <div class="social-links">
+            <a href="https://discord.gg/52jCrPsSdg" target="_blank" class="social-link" title="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="https://www.youtube.com/@xpert.alerts" target="_blank" class="social-link" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.tiktok.com/@youcef_xr" target="_blank" class="social-link" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://x.com/Xpert_gf" target="_blank" class="social-link" title="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/xpert.gf/" target="_blank" class="social-link" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+
+        <div class="payment-methods">
+            <span class="payment-icon mada">mada</span>
+            <span class="payment-icon mastercard"><i class="fa-brands fa-cc-mastercard"></i></span>
+            <span class="payment-icon visa"><i class="fa-brands fa-cc-visa"></i></span>
+            <span class="payment-icon applepay"><i class="fa-brands fa-apple-pay"></i></span>
+            <span class="payment-icon paypal"><i class="fa-brands fa-cc-paypal"></i></span>
 </div>
-                
+    </div>
+</div>   
             </div>
         </div>
     </footer>
