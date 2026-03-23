@@ -805,14 +805,11 @@ footer {
 
 /* إذا كنت تستخدم وسم hr في الـ HTML، تأكد من هذا التنسيق */
 .footer-divider {
-    display: block; /* لضمان ظهوره */
     border: none;
-    height: 1px;
+    height: 2px;
     background-color: #f07a04;
-    margin: 2rem 0;
-    opacity: 0.3; /* شفافية خفيفة للخط السفلي */
+    margin: 20px 0;
 }
-
 
         
         .footer-container {
@@ -935,13 +932,23 @@ footer {
             font-size: 1.2rem;
         }
 
+
+<hr class="footer-divider">
+
+        
        .footer-bottom {
-    border-top: 1px solid rgba(240, 122, 4, 0.4);
+    border-top: 2px solid #f07a04; /* خليه واضح */
     margin-top: 2rem;
-    padding-top: 1.5rem;
+    padding: 1.5rem 0 0;
     text-align: center;
-    position: relative; /* مهم */
 }
+
+
+footer {
+    padding-bottom: 20px; /* يعطي مساحة للخط */
+}
+
+        
 
         .footer-text {
     text-align: center;
