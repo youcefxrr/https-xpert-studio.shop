@@ -848,36 +848,34 @@
 
 
 
-
+/* تنسيق الـ Container الرئيسي للأسفل */
 .footer-bottom {
-    border-top: 1px solid #333; /* خط فاصل بسيط فوق الحقوق */
     padding: 20px 0;
     margin-top: 30px;
 }
 
-.footer-content {
+/* تنسيق الـ Wrapper الذي يجمع كل شيء */
+.footer-bottom-content {
     display: flex;
-    justify-content: space-between; /* هذا السطر هو السر: يضع عنصراً في أقصى اليمين والآخر في أقصى اليسار */
+    justify-content: space-between; /* يضع Rights في جهة و Payment في الجهة المقابلة */
     align-items: center; /* لمحاذاة العناصر عمودياً في المنتصف */
     flex-wrap: wrap; /* لضمان نزول العناصر تحت بعضها في الشاشات الصغيرة */
     gap: 20px;
 }
 
-/* إذا كنت تريد النص في اليمين والأيقونات في اليسار (للمواقع العربية) */
+/* تنسيق Rights في اليمين (للمواقع العربية) */
 @media (min-width: 768px) {
-    .footer-content {
+    .footer-bottom-content {
         flex-direction: row; 
     }
 }
 
-/* تنسيق بسيط لأيقونات الدفع لتكون بجانب بعضها */
+/* تنسيق أيقونات الدفع لتكون بجانب بعضها */
 .payment-methods {
     display: flex;
     gap: 10px;
     align-items: center;
 }
-
-
 
 
 
