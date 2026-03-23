@@ -813,17 +813,7 @@ footer {
     opacity: 0.3; /* شفافية خفيفة للخط السفلي */
 }
 
-.footer-bottom {
-    /* إذا أردت الخط السفلي يكون جزءاً من هذا العنصر بدلاً من hr */
-    border-top: 1px solid rgba(240, 122, 4, 0.3);
-    padding-top: 1.5rem;
-    display: flex;
-    justify-content: center; /* لضمان توسط النص كما طلبت */
-    align-items: center;
-}
 
-
-        
         
         .footer-container {
             max-width: 1200px;
@@ -945,16 +935,12 @@ footer {
             font-size: 1.2rem;
         }
 
-        .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-
-        }
+       .footer-bottom {
+    border-top: 1px solid rgba(240, 122, 4, 0.4);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+}
 
         .footer-text {
             color: var(--text-muted);
@@ -974,15 +960,6 @@ footer {
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-logo-section { text-align: center; }
             .social-links { justify-content: center; }
-.footer-bottom {
-    position: relative; /* ضروري ليعمل التموضع المطلق بداخلها */
-    min-height: 50px;   /* تأكد من وجود ارتفاع كافٍ */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* الأيقونات ستبقى على الأطراف */
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(240, 122, 4, 0.3);
-}
 
 .footer-text {
     position: absolute;
@@ -1272,14 +1249,9 @@ footer {
             </div>
         </div>
 
- <div class="footer-bottom">
-    <div class="footer-content">
-        </div>
-    </div>
+<div class="footer-bottom">
+    <p class="footer-text">© 2026 Xpert Studio. جميع الحقوق محفوظة</p>
 </div>
-                <p class="footer-text">© 2026 Xpert Studio. جميع الحقوق محفوظة</p>
-    </footer>
-
     
     <!-- Chatbot Fixed -->
     <div class="chatbot-fixed">
